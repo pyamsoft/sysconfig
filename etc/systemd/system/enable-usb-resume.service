@@ -1,0 +1,10 @@
+[Unit]
+Description=Enable USB devices as wakeup source
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh -c 'wakeup-usb-devices'
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,21 @@
+# On some machines (like mine on kernel 4.14, any attempt to suspend the machine
+# is followed by an instant - incorrect - resume event. This seems to be caused
+# in part by wonky bluetooth.
+#
+# This systemd sleep service will stop the actual bluetooth service when the
+# machine goes down for suspend, and restart it upon resume, which should allow
+# for the proper suspend-resume cycle.
+[Unit]
+Description=Stops bluetooth on sleep, restarts on resume
+Before=sleep.target
+StopWhenUnneeded=yes
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ExecStart=/bin/sh -c 'systemctl stop bluetooth'
+ExecStop=/bin/sh -c 'systemctl restart bluetooth'
+
+[Install]
+WantedBy=sleep.target
+
