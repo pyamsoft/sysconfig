@@ -7,7 +7,15 @@
 
 prompt_ps1()
 {
-  printf -- '%s@%s %s %s ' '\u' '\h' "${PWD}" '\$'
+  off="\033[0m"
+  red="\033[1;31m"
+  purple="\033[1;35m"
+  printf -- '%s%s@%s %s%s\n' "${red}" '\u' '\h' "${purple}" '\w'
+  printf -- '%s%s %s' "${red}" '\$' "${off}"
+
+  unset red
+  unset off
+  unset purple
 }
 
 prompt_command()
