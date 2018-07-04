@@ -35,4 +35,4 @@ set match-hidden-files off
 "\el": "ls -l "
 "\ec": "cd "
 "\em": "man "
-"\ep": "sudo pacman -Syu && aursync -u"
+"\ep": "aurman -Syu"
