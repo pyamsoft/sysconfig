@@ -5,4 +5,9 @@ if [ "$(id -u)" -eq 0 ]; then
   exit 1
 fi
 
+if [ ! -e "${HOME}/bin/bww" ] || [ ! -x "${HOME}/bin/bww" ]; then
+  printf -- 'kdeconnectd is missing bww script in %s' "${HOME}/bin" >> "${HOME}/kdeconnectd_error.log"
+  exit 1
+fi
+
 exec "${HOME}/bin/bww" /usr/lib/kdeconnectd-real "$@"
