@@ -1,4 +1,5 @@
-# do not bell on tab-completion
+set input-meta on
+set output-meta on
 set bell-style none
 set horizontal-scroll-mode off
 set echo-control-characters on
