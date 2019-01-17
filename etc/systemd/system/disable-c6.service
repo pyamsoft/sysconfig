@@ -1,10 +1,9 @@
-[Unit]
 Description=Disable C6 on boot
 After=default.target
 
 [Service]
 Type=oneshot
-ExecStart=/bin/sh -c 'modprobe msr && zenstates --c6-disable'
+ExecStart=/usr/local/bin/disable-c6
 
 [Install]
 WantedBy=default.target

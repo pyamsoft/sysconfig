@@ -1,0 +1,14 @@
+[Unit]
+Description=Disable C6 on resume
+Before=sleep.target
+StopWhenUnneeded=yes
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ExecStart=/bin/true
+ExecStop=/usr/local/bin/disable-c6
+
+[Install]
+WantedBy=sleep.target
+
