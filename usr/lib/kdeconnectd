@@ -7,4 +7,4 @@ fi
 
 # Do not exec here since bww will exec for you
 # Indicator kdeconnect must see that kdeconnectd is running
-"${HOME}/bin/bww" --bind-if-exists "${HOME}/downloads" /usr/lib/kdeconnectd-real "$@"
+"${HOME}/bin/bww" --bind-if-exists "${HOME}/downloads" --forcename="kdeconnectd" /usr/lib/kdeconnectd-real "$@"
