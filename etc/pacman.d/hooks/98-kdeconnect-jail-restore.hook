@@ -1,6 +1,6 @@
 [Trigger]
-Operation=Install
-Operation=Upgrade
+Operation = Install
+Operation = Upgrade
 Type = Package
 Target = kdeconnect
 
