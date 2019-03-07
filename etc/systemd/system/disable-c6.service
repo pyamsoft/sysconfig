@@ -1,3 +1,4 @@
+[Unit]
 Description=Disable C6 on boot
 After=default.target
 
