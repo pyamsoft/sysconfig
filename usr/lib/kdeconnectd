@@ -7,4 +7,13 @@ fi
 
 # Do not exec here since bww will exec for you
 # Indicator kdeconnect must see that kdeconnectd is running
-"${HOME}/bin/bww" --bind-if-exists "${HOME}/downloads" --forcename="kdeconnectd" /usr/lib/kdeconnectd-real "$@"
+# Force name for cleaner folder
+# Bind shared downloads folder
+# Need access to systemd for systemctl suspend
+# Need access to pid namespace to avoid polkit warning message on systemctl command
+# NOTE: systemctl command will still work... even if warning were to show.
+"${HOME}/bin/bww" \
+  --forcename="kdeconnectd" \
+  --bind-if-exists "${HOME}/downloads" \
+  --systemd --nopid \
+  /usr/lib/kdeconnectd-real "$@"
