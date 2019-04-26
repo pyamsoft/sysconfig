@@ -15,5 +15,6 @@ fi
 "${HOME}/bin/bww" \
   --forcename="kdeconnectd" \
   --bind-if-exists "${HOME}/downloads" \
+  --bind-if-exists "${HOME}/.config/kdeconnect" \
   --systemd --nopid \
   /usr/lib/kdeconnectd-real "$@"
