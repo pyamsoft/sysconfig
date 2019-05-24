@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service version="1.0.0">
+  <short>kdeconnect</short>
+  <description>KDEConnect</description>
+  <port port="1714-1764" protocol="tcp"/>
+  <port port="1714-1764" protocol="udp"/>
+</service>
