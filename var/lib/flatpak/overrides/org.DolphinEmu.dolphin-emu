@@ -1,0 +1,4 @@
+[Context]
+features=bluetooth;
+filesystems=/storage/pyamsoft/games/dolphin;
+devices=all;

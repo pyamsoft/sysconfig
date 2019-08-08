@@ -1,0 +1,6 @@
+[Context]
+devices=dri;!all;
+features=!devel;!multiarch;!bluetooth;!canbus;
+filesystems=~/.drirc:ro;!/tmp;!xdg-music;!xdg-pictures;!xdg-download;!home;!xdg-videos;!xdg-documents;!xdg-templates;!host;!xdg-desktop;xdg-config/dconf:ro;xdg-config/kdeglobals:ro;
+persistent=.;
+sockets=!pcsc;
