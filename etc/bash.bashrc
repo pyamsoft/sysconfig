@@ -20,7 +20,8 @@ prompt_ps1()
 
 prompt_command()
 {
-  export PS1=$(prompt_ps1)
+  PS1=$(prompt_ps1)
+  export PS1
 }
 
 enable_bash_completion()
