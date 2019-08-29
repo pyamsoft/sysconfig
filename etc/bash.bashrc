@@ -20,10 +20,19 @@ prompt_ps1()
 
 prompt_command()
 {
-  PS1=$(prompt_ps1)
-  export PS1
+  export PS1=$(prompt_ps1)
 }
 
+enable_bash_completion()
+{
+  # Enable bash completion
+  bcomp="/usr/share/bash-completion/bash_completion"
+  # shellcheck disable=SC1090
+  [ -r "${bcomp}" ] && . "${bcomp}"
+  unset bcomp
+}
+
+enable_bash_completion
 PROMPT_COMMAND=prompt_command
 export PROMPT_COMMAND
 
