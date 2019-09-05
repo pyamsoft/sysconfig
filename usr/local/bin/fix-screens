@@ -1,9 +1,4 @@
 #!/bin/sh
 
-left="DisplayPort-1"
-right="HDMI-A-0"
-
-exec xrandr \
-  --output "${left}" --auto --rotate normal --primary \
-  --output "${right}" --auto --rotate normal --right-of "${left}"
+exec autorandr -l default
 
