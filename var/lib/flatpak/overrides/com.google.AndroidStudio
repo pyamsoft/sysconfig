@@ -1,5 +1,5 @@
 [Context]
-devices=all;
+devices=all;kvm;
 features=devel;multiarch;
 filesystems=/storage/pyamsoft/devel/android;
 

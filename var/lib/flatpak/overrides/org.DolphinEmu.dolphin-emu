@@ -2,3 +2,6 @@
 features=bluetooth;
 filesystems=/storage/pyamsoft/games/dolphin;
 devices=all;
+
+[Environment]
+vblank_mode=0
