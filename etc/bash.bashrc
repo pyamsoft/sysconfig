@@ -34,7 +34,7 @@ enable_bash_completion()
 }
 
 enable_bash_completion
-readonly PROMPT_COMMAND=prompt_command
+PROMPT_COMMAND=prompt_command
 export PROMPT_COMMAND
 
 # Colorized
