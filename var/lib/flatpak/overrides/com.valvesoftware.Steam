@@ -1,4 +1,0 @@
-[Context]
-devices=all;
-features=devel;multiarch;
-filesystems=/storage/pyamsoft/games/steam;
