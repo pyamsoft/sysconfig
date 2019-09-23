@@ -1,0 +1,7 @@
+# Commands allowed for pyamsoft user
+
+# Add the pyamsoft bin for restricted commands when running as pyamsoft
+Defaults:pyamsoft secure_path="/home/pyamsoft/bin:/home/pyamsoft/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+# Restricted
+pyamsoft ALL=(:restricted) NOPASSWD:SETENV: ALL
