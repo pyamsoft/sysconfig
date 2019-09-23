@@ -12,7 +12,7 @@ fi
 # Need access to systemd for systemctl suspend
 # Need access to pid namespace to avoid polkit warning message on systemctl command
 # NOTE: systemctl command will still work... even if warning were to show.
-"${HOME}/bin/bww" \
+bww \
   --forcename="kdeconnectd" \
   --bind-if-exists "${HOME}/downloads" \
   --bind-if-exists "${HOME}/.config/kdeconnect" \
