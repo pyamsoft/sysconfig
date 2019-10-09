@@ -7,7 +7,10 @@ if [ -n "$1" ] && [ "$1" = "phone" ]; then
   geometry="2280x1080"
 else
   # FHD
-  geometry="1920x1080"
+  # geometry="1920x1080"
+  #
+  # HD+
+  geometry="1600x900"
 fi
 
 # -localhost yes
