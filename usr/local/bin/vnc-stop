@@ -1,0 +1,5 @@
+#!/bin/sh
+
+display=":51"
+
+exec vncserver -kill "${display}"

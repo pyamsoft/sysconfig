@@ -1,0 +1,21 @@
+#!/bin/sh
+
+display=":51"
+
+if [ -n "$1" ] && [ "$1" = "phone" ]; then
+  # FHD+
+  geometry="2280x1080"
+else
+  # FHD
+  geometry="1920x1080"
+fi
+
+# -localhost only allow local clients to connect
+#  You should ssh into the machine and then connect locally to VNC from it
+#
+# -comparefb 0
+#  Do not compress since you are local so VNC wont need to travel
+#
+# -improvedhextile 0
+#  Do not compress since it consumes more CPU time and there is no travel
+exec vncserver "${display}" -localhost -geometry "${geometry}" -comparefb 0 -improvedhextile 0
