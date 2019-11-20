@@ -1,8 +1,0 @@
-Description="Firejail Bridge connection"
-Interface=br0
-Connection=bridge
-BindsToInterfaces=()
-IP=static
-Address=('192.168.69.1/24')
-## Ignore (R)STP and immediately activate the bridge
-SkipForwardingDelay=yes
