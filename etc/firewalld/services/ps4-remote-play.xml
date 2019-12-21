@@ -5,5 +5,4 @@
   <port port="9295" protocol="tcp"/>
   <port port="9295-9297" protocol="udp"/>
   <port port="9304" protocol="udp"/>
-  <port port="40000-46500" protocol="udp"/>
 </service>
