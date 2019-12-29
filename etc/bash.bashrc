@@ -31,6 +31,11 @@ enable_bash_completion()
   # shellcheck disable=SC1090
   [ -r "${bcomp}" ] && . "${bcomp}"
   unset bcomp
+
+  bcomp="/etc/bash_completion"
+  # shellcheck disable=SC1090
+  [ -r "${bcomp}" ] && . "${bcomp}"
+  unset bcomp
 }
 
 enable_bash_completion
