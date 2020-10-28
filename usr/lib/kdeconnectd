@@ -15,6 +15,7 @@ fi
 # Need access to pid namespace to avoid polkit warning message on systemctl command
 # NOTE: systemctl command will still work... even if warning were to show.
 "${HOME}/.local/bin/bww" \
+  --private \
   --forcename="kdeconnectd" \
   --bind-if-exists "${HOME}/downloads" \
   --bind-if-exists "${HOME}/.config/kdeconnect" \
