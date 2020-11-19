@@ -2,7 +2,7 @@
 
 readonly zenstates='/usr/local/src/Zenstates-Linux'
 readonly script="${zenstates}/zenstates.py"
-readonly url='https://github.com/r4m0n/ZenStates-Linux/'
+readonly url='https://github.com/irusanov/ZenStates-Linux'
 
 check_zenstates()
 {
@@ -12,6 +12,10 @@ check_zenstates()
       printf -- 'Please re-run the script.\n'
       return 1
     }
+
+		cd "${zenstates}" || return 1
+		patch_repo
+		cd ..
   else
     if [ ! -e "${script}" ] || [ ! -x "${script}" ]; then
       printf -- 'Zenstates script could not be found at %s\n' "${script}"
@@ -21,6 +25,29 @@ check_zenstates()
   fi
 
   return 0
+}
+
+patch_repo()
+{
+  printf -- 'Patching repo...\n'
+	printf -- '%s\n' "$(cat << EOF
+diff --git a/zenstates.py b/zenstates.py
+index 3ba768a..3a98381 100755
+--- a/zenstates.py
++++ b/zenstates.py
+@@ -27,6 +27,7 @@ SMU_CMD_OC_ENABLE =         0
+ SMU_CMD_OC_DISABLE =        0
+ SMU_CMD_OC_FREQ_ALL_CORES = 0
+ SMU_CMD_OC_VID =            0
++SMU_CMD_GET_PBO_SCALAR =    0
+ 
+ isOcFreqSupported = False
+ cpu_sockets = int(os.popen('cat /proc/cpuinfo | grep "physical id" | sort -u | wc -l').read())
+EOF
+)" > patchfile || return 1
+	patch -p1 -i patchfile || return 1
+  rm -f patchfile || return 1
+	return 0
 }
 
 require()
@@ -62,6 +89,11 @@ load_kernel_modules()
     return 1
   }
 
+  modprobe -i cpuid || {
+    printf -- 'Failed to load "cpuid" module\n'
+    return 1
+  }
+
   return 0
 }
 
@@ -80,7 +112,7 @@ main()
   # Run the script and disable c6
   load_kernel_modules || return 1
 
-  python3 "${script}" --c6-disable || return 1
+  python3 "${script}" --no-gui --c6-disable || return 1
   return 0
 }
 
