@@ -1,10 +1,10 @@
 [Unit]
-Description=Disable C6 on boot
+Description=Adjust Ryzen CPU
 After=default.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/disable-c6
+ExecStart=/usr/local/bin/adjust-ryzen
 
 [Install]
 WantedBy=default.target

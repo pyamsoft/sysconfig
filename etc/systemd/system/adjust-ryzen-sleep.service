@@ -1,5 +1,5 @@
 [Unit]
-Description=Disable C6 on resume
+Description=Adjust Ryzen CPU
 Before=sleep.target
 StopWhenUnneeded=yes
 
@@ -7,7 +7,7 @@ StopWhenUnneeded=yes
 Type=simple
 RemainAfterExit=yes
 ExecStart=/bin/true
-ExecStop=/usr/local/bin/disable-c6
+ExecStop=/usr/local/bin/adjust-ryzen
 
 [Install]
 WantedBy=sleep.target
