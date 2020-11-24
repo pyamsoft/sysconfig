@@ -114,8 +114,8 @@ main()
 
   python3 "${script}" --no-gui --c6-disable || return 1
 
-  # Apply p-state 0 undervolt from 1.23750V to 1.18125V
-  python3 "${script}" --no-gui -p 0 -v 3B
+  # Apply p-state 0 undervolt from 1.23750V to 1.20625
+  python3 "${script}" --no-gui -p 0 -v 37
   return 0
 }
 
