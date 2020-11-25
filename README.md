@@ -1,5 +1,9 @@
 # sysconfig
 
+## DEPRECATED
+
+Please use (dots)[https://github.com/pyamsoft/dots] instead
+
 System level configuration for various things. Use and re-use as you wish.
 
 ## License
